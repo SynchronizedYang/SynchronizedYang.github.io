@@ -18,7 +18,7 @@
 <li>ModuleNotFoundError: No module named ‘wheel.pep425tags’<br>python版本3.x的方法是：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import wheel.pep425tags as w</span><br><span class="line">print(w.get_supported())</span><br></pre></td></tr></table></figure>
 错误的截图如下：<br><img src="https://wx1.sinaimg.cn/mw2000/007633h9ly1gs5ujp2smxj30j804la9x.jpg" alt="报错3"></li>
 </ul>
-<p>后来终于找到下面这种方法,一开始也是报错，那是因为我一直在python环境下输入命令，后来退出python环境，输入命令就成功了：<br>python环境(失败)：<br><img src="https://wx1.sinaimg.cn/mw2000/007633h9ly1gs5v2ophejj60gj031dfm02.jpg" alt="报错4"><br>dos环境(成功)：<br><img src="https://wx1.sinaimg.cn/mw2000/007633h9ly1gs5v56xft8j30tx0pf74u.jpg" alt="成功"><br>最后安装numpy也就一帆风顺了！</p>
+<p>后来终于找到下面这种方法,一开始也是报错，那是因为我一直在python环境下输入命令，后来退出python环境，输入命令就成功了：<br>python环境(失败)：<br><img src="https://wx1.sinaimg.cn/mw2000/007633h9ly1gs5v2ophejj60gj031dfm02.jpg" alt="报错4"><br>dos环境(成功)：<br><img src="https://tvax4.sinaimg.cn/large/007633h9ly1gs61ze9nbgj30tx0pf74u.jpg" alt="成功"><br>最后安装numpy也就一帆风顺了！</p>
 ]]></content>
       <categories>
         <category>python</category>
