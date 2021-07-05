@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>我的第一篇博客</title>
-    <url>/2021/06/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<h1 id="博客"><a href="#博客" class="headerlink" title="博客"></a>博客</h1><h2 id="第一篇博客"><a href="#第一篇博客" class="headerlink" title="第一篇博客"></a>第一篇博客</h2><span id="more"></span>
-
+    <title>安装numpy出现的问题及解决</title>
+    <url>/2021/07/04/%E5%AE%89%E8%A3%85numpy%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3/</url>
+    <content><![CDATA[<p>&nbsp; &nbsp; 本想下午开启机器学习课程的学习，谁知一个下午都耗在了安装numpy和scipy上面，好在最后终于安装上了。我根据根据网上的 教程下载好numpy和scipy，使用pip install操作安装依赖包，命令行提示numpy的版本不是python所支持的版本，于是一下午都开始了寻找python支持numpy版本的道路。</p>
+<span id="more"></span>
 <ul>
-<li>列表1</li>
-<li>列表2<br>我是你爸爸<br><a href="https://blog.csdn.net/weixin_43977566/article/details/89944367?spm=1001.2014.3001.5501">mysql关键字使用问题</a></li>
+<li>AttributeError: module ‘pip’ has no attribute ‘pep425tags’<br>根据教程，使用下面的方法查看python支持的numpy版本：</li>
 </ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import pip</span><br><span class="line">print(pip.pep425tags.get_supported())</span><br></pre></td></tr></table></figure>
+<p>报出了下面的错误：</p>
+<!--<img src="https://wx1.sinaimg.cn/mw2000/007633h9ly1gs5b4abpnoj30jt02yglf.jpg" align="left"/>-->   
+<p><img src="https://wx1.sinaimg.cn/mw2000/007633h9ly1gs5b4abpnoj30jt02yglf.jpg" alt="报错1"><br>后来得知上面是32位的方法，于是我又找到了下面的64的方法，可还是报错了：</p>
+<ul>
+<li>ModuleNotFoundError: No module named ‘pip._internal.pep425tags’<br>64位的方法是：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import pip._internal.pep425tags</span><br><span class="line">print(pip._internal.pep425tags.get_supported())</span><br></pre></td></tr></table></figure>
+错误截图如下：<br><img src="https://wx1.sinaimg.cn/mw2000/007633h9ly1gs5t2f7xcaj30lu04n746.jpg" alt="报错2"><br>我又将错误谷歌了一下，发现上面的方法适用于python版本2.x，而我的python版本是3.9的，所以就有了下面的方法，但还是错了：</li>
+<li>ModuleNotFoundError: No module named ‘wheel.pep425tags’<br>python版本3.x的方法是：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import wheel.pep425tags as w</span><br><span class="line">print(w.get_supported())</span><br></pre></td></tr></table></figure>
+错误的截图如下：<br><img src="https://wx1.sinaimg.cn/mw2000/007633h9ly1gs5ujp2smxj30j804la9x.jpg" alt="报错3"></li>
+</ul>
+<p>后来终于找到下面这种方法,一开始也是报错，那是因为我一直在python环境下输入命令，后来退出python环境，输入命令就成功了：<br>python环境(失败)：<br><img src="https://wx1.sinaimg.cn/mw2000/007633h9ly1gs5v2ophejj60gj031dfm02.jpg" alt="报错4"><br>dos环境(成功)：<br><img src="https://wx1.sinaimg.cn/mw2000/007633h9ly1gs5v56xft8j30tx0pf74u.jpg" alt="成功"><br>最后安装numpy也就一帆风顺了！</p>
 ]]></content>
       <categories>
-        <category>前端</category>
+        <category>python</category>
       </categories>
       <tags>
-        <tag>导航</tag>
-        <tag>分享</tag>
+        <tag>numpy</tag>
+        <tag>scikit-learn</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>第二篇博客</title>
-    <url>/2021/06/30/%E7%AC%AC%E4%BA%8C%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[]]></content>
   </entry>
 </search>
