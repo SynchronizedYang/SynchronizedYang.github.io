@@ -11,14 +11,14 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import pip</span><br><span class="line">print(pip.pep425tags.get_supported())</span><br></pre></td></tr></table></figure>
 <p>报出了下面的错误：</p>
 <!--<img src="https://wx1.sinaimg.cn/mw2000/007633h9ly1gs5b4abpnoj30jt02yglf.jpg" align="left"/>-->   
-<p><img src="https://wx1.sinaimg.cn/mw2000/007633h9ly1gs5b4abpnoj30jt02yglf.jpg" alt="报错1"><br>后来得知上面是32位的方法，于是我又找到了下面的64的方法，可还是报错了：</p>
+<p><img src="https://tvax2.sinaimg.cn/large/007633h9ly1gs62ezk4j8j30jt02ymxi.jpg" alt="报错1"><br>后来得知上面是32位的方法，于是我又找到了下面的64的方法，可还是报错了：</p>
 <ul>
 <li>ModuleNotFoundError: No module named ‘pip._internal.pep425tags’<br>64位的方法是：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import pip._internal.pep425tags</span><br><span class="line">print(pip._internal.pep425tags.get_supported())</span><br></pre></td></tr></table></figure>
-错误截图如下：<br><img src="https://wx1.sinaimg.cn/mw2000/007633h9ly1gs5t2f7xcaj30lu04n746.jpg" alt="报错2"><br>我又将错误谷歌了一下，发现上面的方法适用于python版本2.x，而我的python版本是3.9的，所以就有了下面的方法，但还是错了：</li>
+错误截图如下：<br><img src="https://tva4.sinaimg.cn/large/007633h9ly1gs62e89q8aj30lu04nwfh.jpg" alt="报错2"><br>我又将错误谷歌了一下，发现上面的方法适用于python版本2.x，而我的python版本是3.9的，所以就有了下面的方法，但还是错了：</li>
 <li>ModuleNotFoundError: No module named ‘wheel.pep425tags’<br>python版本3.x的方法是：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import wheel.pep425tags as w</span><br><span class="line">print(w.get_supported())</span><br></pre></td></tr></table></figure>
-错误的截图如下：<br><img src="https://wx1.sinaimg.cn/mw2000/007633h9ly1gs5ujp2smxj30j804la9x.jpg" alt="报错3"></li>
+错误的截图如下：<br><img src="https://tvax3.sinaimg.cn/large/007633h9ly1gs62cw5oj1j30j804lmxu.jpg" alt="报错3"></li>
 </ul>
-<p>后来终于找到下面这种方法,一开始也是报错，那是因为我一直在python环境下输入命令，后来退出python环境，输入命令就成功了：<br>python环境(失败)：<br><img src="https://wx1.sinaimg.cn/mw2000/007633h9ly1gs5v2ophejj60gj031dfm02.jpg" alt="报错4"><br>dos环境(成功)：<br><img src="https://tvax4.sinaimg.cn/large/007633h9ly1gs61ze9nbgj30tx0pf74u.jpg" alt="成功"><br>最后安装numpy也就一帆风顺了！</p>
+<p>后来终于找到下面这种方法,一开始也是报错，那是因为我一直在python环境下输入命令，后来退出python环境，输入命令就成功了：<br>python环境(失败)：<br><img src="https://tva4.sinaimg.cn/large/007633h9ly1gs625fvjyoj30gj031q32.jpg" alt="报错4"><br>dos环境(成功)：<br><img src="https://tvax4.sinaimg.cn/large/007633h9ly1gs61ze9nbgj30tx0pf74u.jpg" alt="成功"><br>最后安装numpy也就一帆风顺了！</p>
 ]]></content>
       <categories>
         <category>python</category>
